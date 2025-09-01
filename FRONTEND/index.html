@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriAI - Community Nutrition Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍎 NutriAI Community Helper</h1>
+            <p>AI-powered nutrition guidance for healthier communities</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="ingredients">Available Ingredients (type and press Enter):</label>
+                <input type="text" id="ingredients" class="ingredient-input" 
+                       placeholder="e.g., chicken, tomatoes, kale, rice, beans...">
+                <div class="ingredient-tags" id="ingredientTags"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="dietary">Special Dietary Needs:</label>
+                <select id="dietary" class="ingredient-input">
+                    <option value="">None</option>
+                    <option value="children">For Children</option>
+                    <option value="pregnant">Pregnant/Nursing Mothers</option>
+                    <option value="elderly">Elderly</option>
+                    <option value="diabetic">Diabetic-Friendly</option>
+                    <option value="low-cost">Very Low Cost</option>
+                </select>
+            </div>
+
+            <button class="btn" id="getRecipesBtn">
+                Get AI Recipe Recommendations
+            </button>
+            <button class="btn" id="demoBtn" style="margin-left: 10px;">
+                Load Demo Data
+            </button>
+        </div>
+
+        <div class="health-alert">
+            <h3>⚕️ Important Health Notice</h3>
+            <p>For medical concerns, especially regarding malnourished infants or children, please consult qualified healthcare professionals or visit your nearest health clinic immediately.</p>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>AI is generating personalized recipe recommendations...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="recipes" class="recipes-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
